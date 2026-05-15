@@ -52,10 +52,22 @@ cp .env.example .env
 Edit `.env` file:
 
 ```env
+Observium DB Config
+---------------------
 DB_HOST=db
 DB_NAME=observium
-DB_USER=observium
+DB_USER=observium    
 DB_PASS=StrongPasswordHere
+----------------------
+MariaDB Root
+----------------------
+MARIADB_ROOT_PASSWORD=StrongPasswordHere
+---------Admin User----
+ADMIN_USER=admin
+ADMIN_PASS=StrongPasswordHere
+-------------------------------
+Optional Observium Settings
+-----------------------------------
 TZ=Asia/Dhaka
 ```
 
