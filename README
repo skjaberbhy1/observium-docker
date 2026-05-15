@@ -1,17 +1,141 @@
-Introduction
-------------
+# 📡 Observium Community Edition (Docker Setup)
 
-Observium is an autodiscovering PHP/MySQL/SNMP based network monitoring which includes
-support for a wide range of network hardware and operating systems including Cisco,
-Linux, FreeBSD, Juniper, Brocade, Foundry, HP and many more.
+This repository contains a Docker-based setup for running Observium Network Monitoring System with a MariaDB backend.
 
-Observium has grown out of a lack of easy to configure network monitoring platforms.
-It is intended to provide a more navigable interface to the health and performance of
-your network. Its design goals include collecting as much historical data about devices
- as possible, being completely autodiscovered with little or no manual intervention,
-and having a very intuitive interface.
+## 🚀 Features
 
-Installation
-------------
+- Dockerized Observium setup
+- MariaDB database integration
+- Persistent RRD data storage
+- Environment-based configuration
+- Easy deployment & scaling
+- Suitable for production & lab environments
 
-Please see https://docs.observium.org, in particular the install guide and FAQ.
+## 📁 Project Structure
+
+.
+├── docker-compose.yml
+├── Dockerfile
+├── .env.example
+├── README.md
+├── rrd/
+├── logs/
+├── cache/
+└── entrypoint.sh
+
+## ⚙️ Requirements
+
+- Docker (20+ recommended)
+- Docker Compose (v2+)
+- Linux server (Ubuntu / Rocky / Debian recommended)
+
+Minimum:
+
+- 2 CPU
+- 2GB RAM
+- 20GB storage
+
+## 🔧 Setup Instructions
+
+1. Clone repository
+
+```bash
+git clone https://github.com/skjaberbhy1/observium-docker.git
+cd observium-docker
+```
+
+2. Create environment file
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` file:
+
+```env
+DB_HOST=db
+DB_NAME=observium
+DB_USER=observium
+DB_PASS=StrongPasswordHere
+TZ=Asia/Dhaka
+```
+
+3. Build & start containers
+
+```bash
+docker compose up -d --build
+```
+
+4. Check running containers
+
+```bash
+docker ps
+```
+
+5. Access Observium UI
+
+Open browser:
+
+```text
+http://YOUR_SERVER_IP:8080
+```
+
+Default login depends on configuration.
+
+## 🧱 Database Information
+
+MariaDB container will auto-create:
+
+- Database: `observium`
+- User: from `.env`
+- Password: from `.env`
+
+## 📊 Data Persistence
+
+Important directories:
+
+- `rrd/` → Network monitoring data
+- `logs/` → System logs
+
+## 🛑 Stop Containers
+
+```bash
+docker compose down
+```
+
+## 🔄 Rebuild (Clean Setup)
+
+```bash
+docker compose down -v
+docker compose up -d --build
+```
+
+## 🔐 Security Notes
+
+- Never commit `.env` file
+- Always use strong DB passwords
+- Restrict public access using firewall
+- Consider HTTPS (reverse proxy with Nginx)
+
+## 🧪 Troubleshooting
+
+1. Login not working
+   - Check DB connection
+   - Verify `.env` values
+
+2. No data in graphs
+   - Check `rrd/` permissions
+   - Ensure poller is running
+
+3. Container restart loop
+   - `docker logs <container_name>`
+
+## 📌 Author
+
+Maintained by: Sheikh Jaber
+GitHub: https://github.com/skjaberbhy1
+LinkedIn: https://www.linkedin.com/in/skjaberbhy/
+
+## 📜 License
+
+This project follows Observium Community Edition license.

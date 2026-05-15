@@ -1,0 +1,18 @@
+FROM skjaberbhy/observium-app:26.1
+
+# Copy cron schedule
+COPY observium-cron /etc/cron.d/observium-cron
+
+RUN chmod 0644 /etc/cron.d/observium-cron
+
+# Runtime dirs
+RUN mkdir -p /var/run /var/log
+
+# Copy entrypoint
+COPY cron-entrypoint.sh /cron-entrypoint.sh
+
+RUN chmod +x /cron-entrypoint.sh
+
+ENTRYPOINT ["/cron-entrypoint.sh"]
+
+CMD ["/usr/sbin/crond", "-n", "-s", "-x", "proc"]

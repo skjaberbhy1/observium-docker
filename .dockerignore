@@ -1,0 +1,46 @@
+# Git
+.git
+.github
+.gitignore
+
+# Logs & runtime data
+rrd/
+logs/
+*.log
+*.rrd
+
+# Cache & temp (IMPORTANT)
+cache/
+tmp/
+temp/
+storage/
+
+# Archives (BIG SIZE ISSUE)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+
+# Config & secrets
+config.php
+.env
+*.key
+*.pem
+
+# Dev dependencies
+node_modules/
+vendor/
+tests/
+
+# OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Backup files
+backup/
+backups/
+*.bak
+*.old
