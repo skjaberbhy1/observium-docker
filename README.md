@@ -62,12 +62,14 @@ DB_PASS=StrongPasswordHere
 MariaDB Root
 ----------------------
 MARIADB_ROOT_PASSWORD=StrongPasswordHere
----------Admin User----
+------------------------
+Web UI Login Credentials
+-------------------------
 ADMIN_USER=admin
 ADMIN_PASS=StrongPasswordHere
 -------------------------------
 Optional Observium Settings
------------------------------------
+--------------------------------
 TZ=Asia/Dhaka
 ```
 
