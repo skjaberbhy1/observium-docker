@@ -1,4 +1,4 @@
-#  Observium Community Edition (Docker Setup)
+# Observium Community Edition (Docker Setup)
 
 This repository contains a Docker-based setup for running Observium Network Monitoring System with a MariaDB backend.
 
