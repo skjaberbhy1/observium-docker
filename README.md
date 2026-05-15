@@ -13,15 +13,14 @@ This repository contains a Docker-based setup for running Observium Network Moni
 
 ## Project Structure
 
-.
-├── docker-compose.yml
-├── Dockerfile
-├── .env.example
-├── README.md
-├── rrd/
-├── logs/
-├── cache/
-└── entrypoint.sh
+
+- docker-compose.yml
+- Dockerfile
+- .env.example
+- README.md
+- rrd/
+- logs/
+- entrypoint.sh
 
 ## Requirements
 
@@ -135,6 +134,7 @@ docker compose up -d --build
 Maintained by: Sheikh Jaber
 GitHub: https://github.com/skjaberbhy1
 LinkedIn: https://www.linkedin.com/in/skjaberbhy/
+
 ## License
 
 This project follows Observium Community Edition license.
