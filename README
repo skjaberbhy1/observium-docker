@@ -1,8 +1,8 @@
-# 📡 Observium Community Edition (Docker Setup)
+#  Observium Community Edition (Docker Setup)
 
 This repository contains a Docker-based setup for running Observium Network Monitoring System with a MariaDB backend.
 
-## 🚀 Features
+## Features
 
 - Dockerized Observium setup
 - MariaDB database integration
@@ -11,7 +11,7 @@ This repository contains a Docker-based setup for running Observium Network Moni
 - Easy deployment & scaling
 - Suitable for production & lab environments
 
-## 📁 Project Structure
+## Project Structure
 
 .
 ├── docker-compose.yml
@@ -23,7 +23,7 @@ This repository contains a Docker-based setup for running Observium Network Moni
 ├── cache/
 └── entrypoint.sh
 
-## ⚙️ Requirements
+## Requirements
 
 - Docker (20+ recommended)
 - Docker Compose (v2+)
@@ -35,7 +35,7 @@ Minimum:
 - 2GB RAM
 - 20GB storage
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 1. Clone repository
 
@@ -82,7 +82,7 @@ http://YOUR_SERVER_IP:8080
 
 Default login depends on configuration.
 
-## 🧱 Database Information
+## Database Information
 
 MariaDB container will auto-create:
 
@@ -90,34 +90,34 @@ MariaDB container will auto-create:
 - User: from `.env`
 - Password: from `.env`
 
-## 📊 Data Persistence
+## Data Persistence
 
 Important directories:
 
 - `rrd/` → Network monitoring data
 - `logs/` → System logs
 
-## 🛑 Stop Containers
+## Stop Containers
 
 ```bash
 docker compose down
 ```
 
-## 🔄 Rebuild (Clean Setup)
+## Rebuild (Clean Setup)
 
 ```bash
 docker compose down -v
 docker compose up -d --build
 ```
 
-## 🔐 Security Notes
+##  Security Notes
 
 - Never commit `.env` file
 - Always use strong DB passwords
 - Restrict public access using firewall
 - Consider HTTPS (reverse proxy with Nginx)
 
-## 🧪 Troubleshooting
+##  Troubleshooting
 
 1. Login not working
    - Check DB connection
@@ -130,12 +130,11 @@ docker compose up -d --build
 3. Container restart loop
    - `docker logs <container_name>`
 
-## 📌 Author
+##  Author
 
 Maintained by: Sheikh Jaber
 GitHub: https://github.com/skjaberbhy1
 LinkedIn: https://www.linkedin.com/in/skjaberbhy/
-
-## 📜 License
+## License
 
 This project follows Observium Community Edition license.
